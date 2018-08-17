@@ -1,0 +1,2 @@
+# cp debian.iso /dev/sdX
+# sync

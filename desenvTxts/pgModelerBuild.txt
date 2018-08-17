@@ -1,0 +1,15 @@
+- instalar libpq-dev do repositório do postgres.
+- instalar o QT framework 5.6.x a partir de http://qt.io/download
+- instalar o gcc e o clang.
+- instalar libxml2-dev e libgl1-mesa-dev
+- Edita linuxdeploy.sh
+  - altera FALLBACK_QT_ROOT para o diretório de instalação do QT.
+  - altera QMAKE_ROOT para o diretório de instalação do QT.
+  - altera QT_IFW_ROOT para o sub diretório da instalação do QT onde está o QT installer framework.
+  - procure por Copying Qt core libraries...
+  - Comente a linha começando com MULTIARCH e todo o IF abaixo.
+  - Dentro do FOR a seguir, comente a linha iniciando com CP, e copie a linha abaixo para o seu lugar
+	cp -v $QT_ROOT/lib/$lib $BUILD_DIR/$INSTALL_ROOT/lib >> $LOG 2>&1
+
+- Roda o comando ./linuxdeploy.sh -gen-installer -comp-installer
+- Ao término, o app compilado estará no diretório /build. Em /dist haverá um arquivo compactado com o app compilado, e um arquivo .run, que é o instalador da ferramenta.

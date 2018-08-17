@@ -1,0 +1,6 @@
+Coloca no contex.xml do server
+
+<Resource auth="Container" driverClassName="org.postgresql.Driver"
+		maxIdle="30" maxTotal="100" maxWaitMillis="-1" name="jdbc/forceApi"
+		password="forcehealth" poolPreparedStatements="true" type="javax.sql.DataSource"
+		url="jdbc:postgresql://localhost:5432/bd_force_health" username="forcehealth" />

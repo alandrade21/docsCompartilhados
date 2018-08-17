@@ -1,0 +1,77 @@
+Instalação
+----------
+
+- Faça o download do configurador do repositório apt do site mysql
+
+- Instale o pacote deb com o dpkg
+
+- sudo apt-get update
+
+- sudo apt-get install mysql-server 
+
+- sudo apt-get install mysql-workbench
+
+Serviço
+-------
+
+- Impedir que mysql rode com o boot
+
+$ sudo update-rc.d mysql disable
+
+- sudo service mysql status
+
+- sudo service mysql stop
+
+- sudo service mysql start
+
+Mover Diretório de Dados de lugar
+----------------------------------
+- Verifica onde está o diretório atual:
+$ mysql -u root -p
+mysql> select @@datadir;
+
+- Deve mostrar algo como:
+
++-----------------+
+| @@datadir       |
++-----------------+
+| /var/lib/mysql/ |
++-----------------+
+1 row in set (0.00 sec)
+
+- Para o serviço mysql
+
+- Copia o diretorio
+
+$ sudo rsync -av /var/lib/mysql /opt
+
+- Renomeia o diretório original para evitar problemas
+
+$ sudo mv /var/lib/mysql /var/lib/mysql.bak
+
+- Edita o arquivo de configuração do my sql
+
+$ sudo gedit /etc/mysql/mysql.conf.d/mysqld.cnf
+
+ou
+
+$ sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
+
+- Acha a entrada datadir= e altera para o novo local
+
+datadir=/opt/mysql
+
+- Restarta o server 
+
+- Verifica se o server achou o novo diretório
+
+$ mysql -u root -p
+mysql> select @@datadir;
+
+- Apaga o diretório antigo
+
+$ sudo rm -Rf /var/lib/mysql.bak
+
+- Restarta o server mais uma ver por garantia.
+
+

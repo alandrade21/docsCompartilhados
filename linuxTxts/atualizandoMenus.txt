@@ -1,0 +1,23 @@
+Caso uma alteração seja feita num dos arquivos .desktop e o sistema não pegue essas alterações, faça:
+
+- Aperte alf+F2
+- Digite restart
+
+Isso vai reiniciar os menus.
+
+Outras indormações úteis:
+
+Ubuntu Applications menu entries are here:
+/usr/share/applications 
+
+
+Debian Menu entries are here:
+/var/lib/menu-xdg/applications/menu-xdg 
+
+
+Icons are found in these locations:
+/usr/share/pixmaps
+/usr/share/icons
+/usr/bin/name-of-app
+
+Quando os manus pararem de funcionar, vai em ~/.config/menus. Se houver um arquivo com 0 bytes, apaga.

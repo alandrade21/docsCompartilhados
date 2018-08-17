@@ -1,0 +1,9 @@
+$ sudo apt-get install samba
+
+$ sudo smbpasswd -a andre
+
+configure o arquivo /etc/samba/smb.conf
+
+$ sudo /etc/init.d/samba restart
+
+

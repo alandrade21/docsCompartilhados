@@ -1,0 +1,72 @@
+No RS coloca
+
+@Configuration 
+@EnableResourceServer
+public class ConfiguracaoOAuth2 extends ResourceServerConfigurerAdapter{ 
+	public static final String RESOURCE_ID = "books" ; 
+
+	@Override 
+	public void configure (ResourceServerSecurityConfigurer resources) throws Exception { 
+		resources.resourceId(RESOURCE_ID); 
+	}
+
+	@Override 
+	public void configure (HttpSecurity http) throws Exception { 
+		http .authorizeRequests() 
+			.anyRequest().authenticated().and() 
+			.requestMatchers() 
+			.antMatchers( "/api/v2/livros" ); 
+	}
+}
+
+Isso identifica o resource controlado por esse RS e o endpoint protegido por oauth.
+
+----------------------------------------------------------------------
+
+No auth server
+
+- AuthorizationEndpoint : esse bean disponibiliza o endpoint /oauth/authorize e é usado para obter a autorização do usuário.
+- TokenEndpoint : esse bean disponibiliza o endpoint /oauth/token para permitir que o Client faça a solicitação do token de acesso.
+
+-----------------------------------------------------------------------
+
+Solicitação de token
+
+Os dados do client (id e segredo) vão como http basic auth (client_id:secret encodadas em base64).
+
+No corpo da requisição seguem os seguintes dados:
+
+ - grant_type: Obrigatório. Nesse caso password.
+ - username: Obrigatório.
+ - password: Obrigatório.
+ - scope: Opcional. Escopos separados por espaço.
+
+A requisição deve ir no formato x-www-form-urlencoded, e deve haver o cabeçalho Authorization com as credenciais do cliente ("Authorization: Basic Y2xpZW50ZS1hcHA6MTIzNDU2").
+
+
+curl -X POST \ 
+-H "Authorization: Basic Y2xpZW50ZS1hcHA6MTIzNDU2" \ 
+-H "Content-Type: application/x-www-form-urlencoded" \ 
+-H "Accept: application/json" \ 
+-d 'grant_type=password&username=jujuba@mailinator.com&password=123&scope=read write' "http://localhost:8080/oauth/token"
+
+--------------------------------------------------------------------------------
+
+Erros:
+
+- 401 - Token expirado
+- 
+
+----------------------------------------------------------------------------------
+
+Chamar REST do Java
+
+public List<Livro> livros (String token) throws UsuarioSemAutorizacaoException { 
+	RestTemplate restTemplate = new RestTemplate(); 
+	MultiValueMap<String, String> headers = new LinkedMultiValueMap<>(); 
+	headers.add( "Authorization" , "Bearer " + token); 
+	String endpoint = "http://localhost:8080/api/v2/livros" ; 
+	RequestEntity<Object> request = new RequestEntity<Object>( headers, HttpMethod.GET, URI.create(endpoint) ); 
+	// resto do código omitido 
+}
+

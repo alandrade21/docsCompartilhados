@@ -1,0 +1,34 @@
+sudo dpkg --add-architecture i386
+sudo apt-get install gnome-system-tools
+dirmngr
+gksu
+rar
+net-tools
+acetoneiso -> Gravar isos
+gparted -> Particionamento de disco
+gnome-disk-utility
+TestDisk -> Recuperar partições
+PhotoRec -> Recuperar arquivos apagados.
+shutter -> printscreen
+gdebi -> Interface para instalação de pacotes .deb
+nautilus-dropbox -> dropbox no gnome
+menulibre -> editor de menus
+uget -> gerenciador de downloads
+filezilla -> ftp client
+bum -> bootup manager
+
+
+Barra de busca do synaptics
+# sudo apt-get install apt-xapian-index
+# sudo update-apt-xapian-index -vf
+
+--Ferramentas de desenv
+gitg -> Clente GIT
+jdraw -> Desenhador de ícones (java)
+screenruler -> Régua para medir tela
+squirrel sql -> disparador de queries (java)
+razorsql -> Administração de banco (java)
+
+--Emuladores
+ZSNESS -> Superness -> zsnes
+mGBA -> game boy advance -> mgba-qt mgba-sdl

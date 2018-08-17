@@ -1,0 +1,17 @@
+Verifique quem é o display manager:
+
+# cat /etc/X11/default-display-manager
+
+VAi listar algo como /usr/sbin/gdm3
+
+Instala o numlockx
+
+# apt-get install numlockx
+
+Vai na pasta /etc/gdm3 (ou a do display manager) e procura o script de inicialização.
+
+Cola o texto abaixo no início do arquivo
+
+if [ -x /usr/bin/numlockx ]; then
+   exec /usr/bin/numlockx on
+fi

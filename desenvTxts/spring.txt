@@ -1,0 +1,40 @@
+== Carregando configs
+
+@ConfigurationProperties("acme")
+public class AcmeProperties {
+
+	private boolean enabled;
+}
+
+@Configuration
+@EnableConfigurationProperties(AcmeProperties.class)
+public class MyConfiguration {
+}
+
+ou 
+
+@Bean
+@ConfigurationProperties(prefix="acme")
+public class AcmeProperties {
+
+	// ... see the preceding example
+
+}
+
+== CORS
+
+@Configuration
+public class MyConfiguration {
+
+	@Bean
+	public WebMvcConfigurer corsConfigurer() {
+		return new WebMvcConfigurer() {
+			@Override
+			public void addCorsMappings(CorsRegistry registry) {
+				registry.addMapping("/api/**");
+			}
+		};
+	}
+}
+
+
