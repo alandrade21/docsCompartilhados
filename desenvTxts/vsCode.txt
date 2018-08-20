@@ -1,0 +1,18 @@
+--Configs
+  -------
+
+- Toda configuração é feita no arquiv0 .vscode/setings.json
+
+- Para corrigir erro de experimental decorator:
+
+   "typescript.tsdk": "/usr/lib/node_modules/typescript/lib"
+
+- Para aumentar fontes do ambiente:
+
+   "editor.fontSize": 14
+   "window.zoomLevel": 2
+
+- Para resolver problemas de identação no código:
+   
+   "editor.tabSize": 2
+   "editor.detectIndentation": false

@@ -1,0 +1,24 @@
+# 
+
+# deb cdrom:[Debian GNU/Linux 8.0.0 _Jessie_ - Official amd64 NETINST Binary-1 20150425-12:50]/ jessie main
+
+# deb cdrom:[Debian GNU/Linux 8.0.0 _Jessie_ - Official amd64 NETINST Binary-1 20150425-12:50]/ jessie main
+
+deb http://ftp.br.debian.org/debian/ jessie main non-free contrib
+deb-src http://ftp.br.debian.org/debian/ jessie main non-free contrib
+
+deb http://security.debian.org/ jessie/updates main contrib non-free
+deb-src http://security.debian.org/ jessie/updates main contrib non-free
+
+# jessie-updates, previously known as 'volatile'
+deb http://ftp.br.debian.org/debian/ jessie-updates main contrib non-free
+deb-src http://debian.pop-sc.rnp.br/debian/ jessie-updates main contrib non-free
+
+#Jessie Unstable
+# deb http://ftp.br.debian.org/debian/ unstable main non-free contrib
+
+#FireFox
+deb http://packages.linuxmint.com debian import
+
+#Multimídia
+deb http://www.deb-multimedia.org jessie main non-free

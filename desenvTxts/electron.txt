@@ -1,0 +1,39 @@
+Electron com angular
+--------------------
+
+- no index html coloca ./ como base href, ao invés de /
+
+- Instala o electron no projeto
+
+$ npm install electron --save-dev
+
+- Cria o arquivo main.js na raiz do projeto. Qdo for carregar o index.html usa:
+
+  const mainWindow = new BrowserWindow({});
+  mainWindow.loadURL(`file://${__dirname}/dist/<nome do projeto>/index.html`);
+
+Comandos para compilar e rodar
+------------------------------
+
+- No arquivo package.json:
+
+   - cria uma entrada "main": "main.js" logo abaixo de "version".
+   
+   - na seção de scripts cria dois scripts:
+
+      - "electron": "electron ."
+      - "electron-build": "ng build && electron ."
+
+Problemas
+---------
+
+- Com Angular 6, referenciando o electron dentro do angular, acontece um problema que não pe possível referenciar as bibliotecas nativas do node. A solução:
+
+   - Em index.html, coloque o seguinte código:
+<script>
+  var electron = require('electron');
+</script>
+
+   - 
+
+

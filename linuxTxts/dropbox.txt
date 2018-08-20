@@ -1,0 +1,3 @@
+gora o dropbox pode ser instalado com:
+$ sudo apt-get install nautilus-dropbox
+

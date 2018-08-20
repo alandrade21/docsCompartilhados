@@ -1,0 +1,9 @@
+Para liberar botão direito no desktop, colocação de ícones no desktop e aparecimento dos ícones do sistema.
+
+# dconf-editor
+
+opção org > gnome > desktop e marque showdesktop icons.
+
+Para ocultar os ícones do sistema mas permitir o resto:
+
+opção org > gnome > nautilus > desktop e desmarque as opções que desejar.

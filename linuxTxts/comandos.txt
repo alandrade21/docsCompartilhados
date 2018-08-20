@@ -1,0 +1,11 @@
+- Listar todos os dispositivos montados:
+$ df -h
+
+- Atribuir sudo
+$ sudo adduser andre sudo
+
+- Verificar disco
+
+Em caso de falha de inicialização, roda:
+
+$ e2fsck -y /dev/device com pau

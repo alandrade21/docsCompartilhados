@@ -1,0 +1,158 @@
+
+---------------------------------------
+- HTML
+----------------------------------------
+
+-- HTML 5
+---------
+
+- No começo do documento coloca <!DOCTYPE html>
+
+-- Estrutura
+------------
+
+- Coloca <title></title> no <head>
+- Negrito <strong></strong>
+- Italico <em></em>
+- Underline <u></u>
+- Break line <br>
+
+-- Imagens
+----------
+
+- <img src="path to image" alt="texto que descreve a imagem">
+
+-- Links
+---------
+
+- <a href="endereço linkado">texto do link</a>
+- se colocar a propriedade target é possível dizer em qual aba ou janela será aberto o link. target="_blak" abre em uma nova aba.
+
+------------------------------------------------------
+-- CSS
+------------------------------------------------------
+
+- A carga do CSS vai no header <link rel="stylesheet" type="text/css" href="caminho para o arquivo">
+- O seletor pode ser um elemento HTML, uma classe (.classe) ou um id (#id).
+- O seletor asterisco afeta todos os elementos da página.
+
+-- Box Model
+-----------
+
+ ------------------------------------------------------
+ \                 
+ \             __________________________________
+ \             |    ^                            |
+ \             |    |                            |
+ \             |    | padding                    |
+ \ <-------->  |    |                            |
+ \   margin    |    V                            |
+ \             |   --------------------------    |
+ \             |   :     width           ^   :   |
+ \             |   : <-------------------|-> :   |
+ \             |   :                     |   :   |
+ \             |   :              height |   :   |
+ \             |   :                     |   :   |
+ \             |   :                     |   :   |
+ \             |   : CONTENT             |   :   |
+ \             |   :                     V   :   |
+ \             |   ---------------------------   |
+ \             |                                 |
+ \             | Border                          |
+ \             |_________________________________|
+ \
+ ------------------
+
+-- Centralizar uma div
+---------------------
+.container {
+	width: 1140px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+-- Margens
+---------
+
+- margin: top right bottom left;
+
+.container {
+	width: 1140px;
+  margin: 20px auto o auto;
+}
+
+-- Bordas
+--------
+
+- border: width line-tipe color;
+
+.author-box {
+  border-top: 1px solid gray;
+}
+
+
+-- Cores
+--------
+
+- Cinzas tem o RGB com valores iguais.
+
+-- Dicas
+--------
+
+- utiliza normalize.css para fazer com que os browsers renderizem os elementos de forma mais consistente.
+
+
+---------------------------
+-- Design
+----------------------------
+
+-- Tipografia
+------------
+
+- Use uma fonte enter 15 e 25 px para o corpo do texto.
+- Use fontes grandes em títulos, mas diminua a font weight.
+- Use espaço entre linhas de 120% a 150% do tamanho da fonte.
+- Use 45 a 90 caracteres por linha. Use 2-3 alfabetos em cacha baixa para fazer a contagem.
+- Olhe google fonts
+
+-- Cores
+--------
+
+- Use apenas uma cor de base.
+- Crie uma cor mais escura e uma mais clara que a base, junto com uma cor escura (preta) e uma clara (branca)
+- nunca use preto
+
+- Vermelho: Força, poder, paixão, excitação. Tons claros são energéticos, tons escuros são mais poderosos e elegantes.
+- Laranja: Chama atenção sem ser tão overpowering como o vermelho. Significa alegria e criatividade. Amizade, confiança e coragem. 
+- Amarelo: Energia, felicidade, vitalidade. Curiosidade, inteligência, brilhantismo.
+- Verde: Harmonia, naturela, vida e saúde. Dinheiro. Tem um efeito balanceador e harmonizador no design.
+- Azul: Paciência, paz, confiança e estabilidade. Profissionalismo, confiança e honra.
+- Púrpura (roxo): Poder, nobreza e riqueza. Sabedoria, realeza, nobreza, luxo e mistério.
+- Rosa: Romance, passividade, cuidado, paz e afeição.
+- Marrom: relaxamento e confiança. Terra, natureza, durabilidade, conforto e confiabilidade.
+
+-- Passos de Design de Site
+-----------------------------
+
+1 - Defina o objetivo do projeto
+2 - Defina o público
+3 - Planeje o conteúdo
+    - Planeje textos, imagens, videos, icones, etc.
+    - Planeje a hierarquia visual.
+    - Defina a navegação.
+    - Defina a estrutura do site (mapa do site).
+4 - Rascunhe as idéias de design (papel e lápis)
+5 - Comece o design com html e css.
+6 - Otimização de performance e search engines
+7 - Lançamento
+8 - Manutenção e monitoramento de uso.
+
+
+
+
+
+
+
+
+
+
