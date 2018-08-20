@@ -147,9 +147,24 @@
 7 - Lançamento
 8 - Manutenção e monitoramento de uso.
 
+-- Media Queries e Breakpoints
+------------------------------
 
+- 480px para celulares (old iphones 4 e 5)
+- 768px para tablets
+- 1024px para tablets paisagem
+- 1200px para computadores.
 
+-- Otimizações
+--------------
 
+- Reduza as dimensões de todas as imagens para o dobro do maior tamanho utilizado de cada imagem.
+- Use optimizilla para reduzir o tamanho de imagens que não podem ter as dimensões reduzidas.
+
+-- SEO
+------
+
+- Tag meta não pode ter mais de 160 characters.
 
 
 
