@@ -30,7 +30,7 @@ No auth server
 
 -----------------------------------------------------------------------
 
-Solicitação de token
+Solicitação de token (Password credential grant type)
 
 Os dados do client (id e segredo) vão como http basic auth (client_id:secret encodadas em base64).
 
@@ -70,3 +70,23 @@ public List<Livro> livros (String token) throws UsuarioSemAutorizacaoException {
 	// resto do código omitido 
 }
 
+--------------------------------------------------
+
+Tempos padrão para vencimento de token:
+
+Refresh: 30 dias. 
+Access: 12 horas.
+
+----------------------------------------------------
+
+Numa aplicação Java, obter o usuário autenticado:
+
+Authentication authentication = SecurityContextHolder.getContext().getAuthentication(); 
+ResourceOwner donoDosLivros = (ResourceOwner) authentication.getPrincipal();
+
+------------------------------------------------------
+
+Authorization tupes:
+
+- password
+- authorization_code
