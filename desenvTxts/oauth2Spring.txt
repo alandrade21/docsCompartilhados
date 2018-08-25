@@ -27,7 +27,8 @@ No auth server
 
 - AuthorizationEndpoint : esse bean disponibiliza o endpoint /oauth/authorize e é usado para obter a autorização do usuário.
 - TokenEndpoint : esse bean disponibiliza o endpoint /oauth/token para permitir que o Client faça a solicitação do token de acesso.
-
+- : /oauth/check_token para permitir que o cliente verifique se o token é válido (introspecção). É interessante que só resource servers acessem esse endpoint, então crie um grant para os resource servers.
+-: /userinfo para recuperar informações de usuário.
 -----------------------------------------------------------------------
 
 Solicitação de token (Password credential grant type)
@@ -90,3 +91,8 @@ Authorization tupes:
 
 - password
 - authorization_code
+- implicit
+- client_credentials
+- refresh_token
+
+
