@@ -14,7 +14,7 @@ $ glxinfo | grep OpenGL | grep renderer
 
 Instale o driver
 
-$ apt-get install nvidia-driver
+$ sudo apt-get install nvidia-driver
 
 Também é necessário instalar:
 

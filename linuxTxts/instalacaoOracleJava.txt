@@ -9,7 +9,7 @@ A partir da java 10 o repositório muda para
 
 Para a instalação do Java Oracle, devemos remover o OpenJDK. No terminal (root), digite: 
 
-# apt-get remove --purge openjdk-* 
+# sudo apt-get remove --purge openjdk-* 
 
 Agora, vamos instalar o Java Oracle (JDK 8). No terminal (root), copie e cole os comandos abaixo: 
 
