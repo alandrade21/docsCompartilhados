@@ -35,8 +35,135 @@ Problemas
 </script>
 
    - 
-<<<<<<< HEAD
+
+=====================================================================
+
+Package.json
+------------
+
+- Package,json tem 3 elementos obrigatórios: name (sem espaços), version e main (caminho para main.js relativo ao package.json).
+
+Processos
+---------
+
+- O processo principal (Main Process) é o que carrega o electron e dispara a janela principal.
+- O processo de renderer (Renderer Process) é criado para cada janela aberta (browser window), e é responsável por rodar o app web embarcado no electron.
+
+BrowserWindow
+-------------
+- Propriedades para criação: {width: , height:, minWidth:, minHeight:, maxWidth:, maxHeight:,  (todos aceitam números ou porcentagens)
+			      resizeable:, movable:, minimizable:, closable:, focusable:, fullscreenable:, (todos booleanos, alguns não são implementados em linux)
+			      icon: path.join(_dirname, 'myapp.png'), title: 'My Title', fullscreen: false, frame: true, backgroundColor: '#eeeeee'} (frame false apaga a moldura da janela, com os botões de controle)
+
+- eventos win.on(' ', () => {}): closed, maximize, minimize, resize, move, show, hide.
+
+- win.on('ready-to-show', () => {
+    win.show();
+  }); Esse código é comum para evitar o flicker de janelas que demoram demais pra carregar.
+
+- métodos win. (): show, hide, focus, close.
+
+IPC
+---
+
+- Comunição do Renderer para o Main:
+
+No Renderer Process
+
+electron.ipcRenderer.send('print-hello', 'John Doe');
+
+No Main Process
+
+electron.ipcMain.on('print-hello', (event, argument) => {
+  console.log(`hello, $argument}!`);
+});
+
+- Comunicação do Main para o Renderer:
+
+No Main Process
+
+win.webContents.send('print-hello', 'John Doe');
+
+No Renderer Process
+
+electron.ipcRenderer.on('print-hello', (event, argument) => {
+  console.log(`hello, $argument}!`);
+});
 
 
-=======
->>>>>>> decd3cb7d80b3d2be0b1da78540b35955fc024c6
+Unsafe Content
+--------------
+
+- Toda vez que tiver que carregar uma página externa num app electron, considere essa página externa um unsafe content.
+
+- No objeto de criação da janela onde será aberto o unsafe content, adicione o seguinte:
+new electron.BrowserWindow({
+  webPreferences: {
+    nodeIntegration: false,  (Essa opção não permite ao código carregado na janela acessar o node, ou seja, a browser window vai funcionar como um browser normal.)
+    javascript: false (Essa opçõa desliga o suporte ao js na nova janela. Essa opção pode ser deixada ligada.)
+  }
+});
+
+
+Dialogs
+-------
+
+- 4 tipos: Open file, Save file, Message, Error.
+
+- Criação:
+
+No Main:
+
+electron.dialog.showErrorBox('oops!', 'Somethig Happened!');
+
+No Renderer
+
+electron.remote.dialog.showErrorBox('oops!', 'Somethig Happened!');
+
+
+- Pegar referência da janela no renderer
+
+electron.remote.getCurrentWindow();
+
+electron.remote.BrowserWindow.getAllWindows();
+
+electron.remote.BrowserWindow.getFocusedWindow();
+
+- Message Dialogs
+
+const currentWindow = electron.remote.getCurrentWindow();
+electron.remote.dialog.showMessageBox( currentWindow, {
+  type: 'warning', // or none, info, error, question
+  title: '',
+  message: '',
+  detail: '',
+  icon: path.join(__dirname, 'danger.png'),
+  buttons: ['OK', 'Cancel'],
+  defaultId: 1, // Id do default button
+  cancelId: 1,  // Id do cancel button
+  checkboxLabel: 'Don\'t warn me about this again',
+  checkboxChecked: false
+}, (response, checkboxChecked) => {
+  if (response === 0) console.log('User clicked OK');
+  if (checkboxChecked) console.log('Checkbox checked');
+});
+
+- Open File Dialog
+
+const currentWindow = electron.remote.getCurrentWindow();
+electron.remote.dialog.showOpenDialog(currentWindow, {
+  title: '',
+  buttonLabel: 'Load File',
+  filters: [
+    {name: "Pictures", extensions: ["png", "jpg", "gif"]},
+    {name: "All Files", extensions: ["*"]}
+  ],
+  properties: ['openFile', 'openDirectory', 'multiSelections']
+}, (selectedFiles) => {
+  selectedFiles.forEach((selectedFile) => {
+    console.log(selectedFile);
+  });
+});
+
+
+
