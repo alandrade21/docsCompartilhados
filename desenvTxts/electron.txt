@@ -165,5 +165,87 @@ electron.remote.dialog.showOpenDialog(currentWindow, {
   });
 });
 
+- Save File Dialog
+
+const currentWindow = electron.remote.getCurrentWindow();
+electron.remote.dialog.showSaveDialog(currentWindow, {
+  title: '',
+  buttonLabel: 'OK',
+  filters: [
+    {name: "Pictures", extensions: ["png", "jpg", "gif"]}
+  ]
+}, (filePath) => {
+  console.log(filePath);
+});
+
+
+Menu
+----
+
+- Tipos de itens de menu: normal, separator, submenu, checkbox, radio.
+
+- Normal:
+{
+  type: 'normal',
+  label: '',
+  accelerator: 'CmdOrCrtl+Shift+A',
+  enabled: true,
+  visible: true,
+  click: () => {}
+}
+
+- Separator: { type: 'separator' }
+
+- submenu
+{
+  label: '',
+  type: 'submenu',
+  submenu: [
+    { type: 'normal', label: ''}
+    { type: 'checkbox', label: '', checked: true}
+    ...
+  ]
+}
+
+- check
+{
+  type: 'checkbox',
+  label: '',
+  enabled: true,
+  visible: true,
+  checked: true,
+  click: (item) => {
+    if(item.checked) {
+    } else {
+    }
+  }
+}
+
+- radio
+[
+  {type: 'radio', label: ''},
+  {type: 'radio', label: '', checked: true},
+  ...
+]
+
+- Accelerators
+
+Mods: Cmd, Ctrl, CmdOrCtrl, Alt, Option, AltGr, Shift, Super
+
+Keys: Space, Tab, Backspace, Delete, Insert, Enter, Up, Down, Left, Right, Escape.
+
+- Criação e uso
+
+const myMenu = electron.Menu.buildFromTemplate([{...}, {...}, ...]);
+electron.Menu.setApplicationMenu(myMenu);
+
+faz isso só depois de app ready.
+
+- Menu de contexto
+
+const myMenu = electron.Menu.buildFromTemplate([{...}, {...}, ...]);
+window.addEventListener('contextmenu', () => {
+  myMenu.popup(electron.remote.getCurrentWindow());
+});
 
 
