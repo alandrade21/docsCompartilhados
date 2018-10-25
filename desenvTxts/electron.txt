@@ -249,3 +249,33 @@ window.addEventListener('contextmenu', () => {
 });
 
 
+Dicas de Estilização
+--------------------
+- Button Outlines: Tira com css
+
+button:focus {
+  outline: none !important;
+}
+
+- User selections: Tira com css no elemento que não quer deixar selecionar
+
+user-select: none;
+
+Por exemplo, numa sidebar:
+
+#sidebar {
+  ...
+  user-select: none;
+}
+
+- Browser zoom: Limita no index.html, cria uma seção de script e coloca:
+
+<script>
+  const electron = require('electron');
+  electron.webFrame.setZoomLevelLimits(1, 1);
+</script>
+
+
+
+
+
