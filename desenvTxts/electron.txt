@@ -275,6 +275,32 @@ Por exemplo, numa sidebar:
   electron.webFrame.setZoomLevelLimits(1, 1);
 </script>
 
+Shell
+-----
+
+- const result = electron.shell.openExternal('');
+
+Retorna um booleano. Recebe um endereço web, um arquivo via file://, ou um e-mail mailto:.
+
+- const result = electron.shell.openFile('');
+
+Recebe o path para o arquivo. Não precisa colocar file://.
+
+- const result = electron.shell.showItemInFolder('');
+
+Recebe o path para o arquivo.
+
+- const result = electron.shell.moveItemToTrash('');
+
+Recebe o path para o arquivo.
+
+
+
+
+
+
+
+
 
 
 
