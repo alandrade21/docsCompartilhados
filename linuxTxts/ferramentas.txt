@@ -16,6 +16,7 @@ menulibre -> editor de menus
 uget -> gerenciador de downloads
 filezilla -> ftp client
 bum -> bootup manager
+nixnote2 -> Cliente evernote
 
 
 Barra de busca do synaptics
@@ -38,4 +39,13 @@ mGBA -> game boy advance -> mgba-qt mgba-sdl
 sudo add-apt-repository ppa:mdeguzis/libregeek
 sudo apt-get update
 sudo apt-get install antimicro -> Mapeador de teclado para joystick
+
+sudo apt install flatpak
+sudo apt install gnome-software-plugin-flatpak
+sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+sudo flatpak remote-add --if-not-exists kdeapps --from https://distribute.kde.org/kdeapps.flatpakrepo
+sudo flatpak install flathub org.kde.Platform//5.11
+flatpak --user install https://flatpak.citra-emu.org/citra-nightly.flatpakref -> Emulador 3DS
+flatpak run org.citra.citra-nightly
+
 
