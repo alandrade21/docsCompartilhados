@@ -1,13 +1,6 @@
 - Instalar node JS
 
-$ curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
-$ sudo apt-get install nodejs
-$ sudo apt-get install build-essential
-
-- Testa a instalação
-
-$ node -v
-$ npm -v
+Nodejs deve estar instalado. Veja arquivo específico.
 
 - Instala o angular cli
 
@@ -23,16 +16,4 @@ $ ng -v
 
 - Instala o typescript
 
-$ sudo npm install -g typescript
-
-- teste 
-
-$ tsc -v
-
-- Config do typescript
-
-$ tsc -init
-
-- ligar a compilaçã automática
-
-$ tsc -w
+veja arquivo específico.
