@@ -10,9 +10,13 @@ $ sudo apt-get install build-essential
 $ node -v
 $ npm -v
 
-- Instalar Dependência como DEV
+- Instalar Dependência
   -----------------------------
 
-$ npm install <pacote> -D
-ou
-$ npm install @types/node --save-dev
+Dependências de desenvolvimento
+  $ npm install <pacote> -D
+  ou
+  $ npm install @types/node --save-dev
+
+Dependências de RunTime
+  $ npm install <pacote> -S
