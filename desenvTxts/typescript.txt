@@ -102,6 +102,8 @@ Um enum é convertido em int, iniciando em 0, na ordem de declaração.
 
 Para obter o enum value com base numa string, usa PlayerPosition["Guard"].
 
+Para obter a string de um enum faz PlayerPosition[x], onde x é o índice do enum.
+
   -- Non Nullable Types
      ------------------
 
@@ -185,6 +187,37 @@ Em TS, a compatibilidade de tipos é constatada não pelo nome do tipo, mas pela
 
 Para adicionar um break point de forma programática, coloca no código:
   debugger;
+
+- Classes
+  -------
+
+  -- Getter & Setter
+     ---------------
+
+class SuperHero {
+  constructor(
+    private name: string
+  ){}
+
+  get name(): string {
+    return this.name;
+  }
+
+  set name(name: string) {
+    this.name = name;
+  }
+}
+
+const superman = new SuperHero('superman');
+console.log(superman.name); // isso usa o getter.
+superman.name = 'Clark Kent'; // iso usa o setter.
+
+-- Read Only Members
+   -----------------
+
+private readonly name: string = '';
+
+
 
 
 
