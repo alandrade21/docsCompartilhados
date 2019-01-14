@@ -212,12 +212,18 @@ const superman = new SuperHero('superman');
 console.log(superman.name); // isso usa o getter.
 superman.name = 'Clark Kent'; // iso usa o setter.
 
--- Read Only Members
+  -- Read Only Members
    -----------------
 
 private readonly name: string = '';
 
+- Generics
+  --------
 
+Ao invés de escrever 
+  function cloneArray(array: any[]): any[]
+escreve
+  function cloneArray<T>(array: T[]): T[]
 
 
 
