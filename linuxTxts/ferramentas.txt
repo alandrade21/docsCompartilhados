@@ -31,10 +31,12 @@ squirrel sql -> disparador de queries (java)
 razorsql -> Administração de banco (java)
 
 --Emuladores
-ZSNESS -> Superness -> zsnes
-visualboyadvance -> GBA -> usa esse
-visualboyadvance-gtk -> Interface para o vba
+ZSNESS -> Superness -> zsnes (instala via apt-get)
+visualboyadvance -> GBA -> usa esse (instala via apt-get)
+visualboyadvance-gtk -> Interface para o vba (instala via apt-get)
 mGBA -> game boy advance -> mgba-qt mgba-sdl
+citra -> 3DS (flatpack - veja instruções mais abaixo)
+desmume -> DS (instala via apt-get)
 
 sudo add-apt-repository ppa:mdeguzis/libregeek
 sudo apt-get update
