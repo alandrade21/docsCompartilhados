@@ -67,9 +67,9 @@ Dependências de RunTime
 
 - Vai para a pasta do componente e roda o comando
 
-$ npm link
+$ sudo npm link
 
-- Isso cria um link global para o componente.
+- Isso cria um link global para o componente em /usr/lib/node_modules/@alandrade21/<nome-do-componente>. Por isso a permissão de sudo.
 
 - Vai para a pasta do projeto que usará o componente e roda o comando
 
