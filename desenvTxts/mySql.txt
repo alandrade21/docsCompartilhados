@@ -74,4 +74,13 @@ $ sudo rm -Rf /var/lib/mysql.bak
 
 - Restarta o server mais uma ver por garantia.
 
+Desinstalação
+-------------
+
+$ sudo apt-get remove --purge mysql-server mysql-client mysql-common -y
+$ sudo apt-get autoremove -y
+$ sudo apt-get autoclean
+
+- Lembra de apagar o diretório de dados se ele não estiver no lugar padrão.
+
 
