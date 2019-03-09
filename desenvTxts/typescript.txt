@@ -196,15 +196,15 @@ Para adicionar um break point de forma programática, coloca no código:
 
 class SuperHero {
   constructor(
-    private name: string
+    private _name: string
   ){}
 
   get name(): string {
-    return this.name;
+    return this._name;
   }
 
   set name(name: string) {
-    this.name = name;
+    this._name = name;
   }
 }
 
