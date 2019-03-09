@@ -50,4 +50,9 @@ sudo flatpak install flathub org.kde.Platform//5.11
 flatpak --user install https://flatpak.citra-emu.org/citra-nightly.flatpakref -> Emulador 3DS
 flatpak run org.citra.citra-nightly
 
+-Edição de imagens
+sudo apt install imagemagick
+sudo apt install nautilus-image-converter
+nautilus -q
+usa com botão direito na imagem no nautilus
 
