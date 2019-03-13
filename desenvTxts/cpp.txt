@@ -12,7 +12,31 @@ $ sudo apt-get install g++
 $ sudo apt-get install gdb
 $ sudo apt-get install clang
 
-Para verificar as versões instaladas, rode cada comando com a opção -v
+Para verificar as versões instaladas, rode cada comando com a opção -v ou  --version
+
+   -- Compilando e linkando em um passo
+     ----------------------------------
+
+> g++ -Wall -g -o hello hello.cpp
+
+As opções significam:
+
+-Wall: Mostra todos os warnings
+
+-g: Gera buildpara debug
+
+-o: Especifica o nome do arquivo de saída
+
+   -- Compilando e linkando em um passo
+     ----------------------------------
+
+> g++ -c -Wall -g hello.cpp
+
+Só compila. Isso é indicado pela opção -c, e gera hello.o.
+
+> g++ -g -o Hello.exe hello.o
+
+Só linka.
 
 - VSCode
   ------
@@ -35,7 +59,7 @@ Vai criar um arquivo tasks.json na pasta .vscode
     {
       "label": "build",
       "type": "shell",
-      "command": "g++ -g hello.cpp -o hello", --> Linha de comando que vai ser rodada
+      "command": "g++ -Wall -g -o hello hello.cpp", --> Linha de comando que vai ser rodada
       "group": {
         "kind": "build",
         "isDefault": true -->  Indica que é esse que vai ser rodado em Terminal>Run Build Task...
