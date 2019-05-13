@@ -12,6 +12,16 @@ Alternativamente instale o pacote nvidia-detect. Esse pacote indica o driver a s
 Verifique o suporte opengl com 
 $ glxinfo | grep OpenGL | grep renderer
 
+----
+
+sudo add-apt-repository ppa:graphics-drivers/ppa
+
+sudo apt update
+
+sudo apt install nvidia-418
+
+----
+
 Instale o driver
 
 $ sudo apt-get install nvidia-driver
