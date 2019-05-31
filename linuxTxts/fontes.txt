@@ -1,1 +1,0 @@
-sudo apt-get install ttf-freefont ttf-mscorefonts-installer ttf-bitstream-vera ttf-dejavu ttf-liberation mathematica-fonts fonts-mathjax-extras fonts-stix
