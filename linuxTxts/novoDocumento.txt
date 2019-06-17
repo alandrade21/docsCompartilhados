@@ -1,5 +1,0 @@
-Verifique onde está a pasta de modelos em ~/.config/user-dirs.dirs
-
-Crie um arquivo de texto vazio com o nome novo.txt, por exemplo.
-
-Depois disso irá aparecer uma opção novo documento no nautilus.
