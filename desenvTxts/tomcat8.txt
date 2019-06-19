@@ -1,7 +1,0 @@
--------------
-SERVIÇO
--------------
-
-systemctl start tomcat8
-systemctl stop tomcat8
-systemctl restart tomcat8
